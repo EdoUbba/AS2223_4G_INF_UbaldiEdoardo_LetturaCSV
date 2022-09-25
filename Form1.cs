@@ -2,6 +2,9 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
 {
     public partial class frm_Main : Form
     {
+        List<string> nomi = new List<string>();
+        List<string> cognomi = new List<string>();
+        List<string> citta = new List<string>();
         public frm_Main()
         {
             InitializeComponent();
@@ -12,7 +15,7 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
             int size = -1;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             DialogResult result = openFileDialog.ShowDialog();
-            if (result == DialogResult.OK) // Test result.
+            if (result == DialogResult.OK)
             {
                 string file = openFileDialog.FileName;
                 try
@@ -24,6 +27,34 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
                 {
                 }
             }
+            StreamReader reader = new StreamReader(openFileDialog.FileName);
+            
+                while (!reader.EndOfStream)
+                {
+                    var riga = reader.ReadLine();
+                    var contenuto = riga.Split(';');
+                    
+                nomi.Add(contenuto[0]);
+                cognomi.Add(contenuto[1]);
+                citta.Add(contenuto[2]);
+
+                nomi.Add(contenuto[3]);
+                cognomi.Add(contenuto[4]);
+                citta.Add(contenuto[5]);
+
+                nomi.Add(contenuto[6]);
+                cognomi.Add(contenuto[7]);
+                citta.Add(contenuto[8]);
+
+                nomi.Add(contenuto[9]);
+                cognomi.Add(contenuto[10]);
+                citta.Add(contenuto[11]);
+
+                nomi.Add(contenuto[12]);
+                cognomi.Add(contenuto[13]);
+                citta.Add(contenuto[14]);
+                }
         }
+
     }
 }
