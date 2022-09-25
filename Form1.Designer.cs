@@ -1,6 +1,6 @@
 ﻿namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
 {
-    partial class Form1
+    partial class frm_Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -115,7 +115,7 @@
             this.btn_Visualizza.Text = "Visualizza";
             this.btn_Visualizza.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,7 +128,7 @@
             this.Controls.Add(this.btn_Cerca);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "frm_Main";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
