@@ -28,11 +28,11 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
                 }
             }
             StreamReader reader = new StreamReader(openFileDialog.FileName);
-            
+            txt_File.Text = openFileDialog.FileName;
                 while (!reader.EndOfStream)
                 {
-                    var riga = reader.ReadLine();
-                    var contenuto = riga.Split(';');
+                    var riga = reader.ReadToEnd();
+                    var contenuto = riga.Split(';','\n');
                     
                 nomi.Add(contenuto[0]);
                 cognomi.Add(contenuto[1]);
@@ -53,8 +53,16 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
                 nomi.Add(contenuto[12]);
                 cognomi.Add(contenuto[13]);
                 citta.Add(contenuto[14]);
-                }
+            }
         }
 
+        private void btn_Visualizza_Click(object sender, EventArgs e)
+        {
+            lst_NomiCognomiCitta.Items.Clear();
+            for(int i = 0; i < nomi.Count; i++)
+            {
+                lst_NomiCognomiCitta.Items.Add(nomi.ElementAt(i) + ", " + cognomi.ElementAt(i) + ", " + citta.ElementAt(i));
+            }
+        }
     }
 }

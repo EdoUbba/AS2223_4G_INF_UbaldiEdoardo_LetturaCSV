@@ -105,6 +105,7 @@
             this.btn_Visualizza.TabIndex = 7;
             this.btn_Visualizza.Text = "Visualizza";
             this.btn_Visualizza.UseVisualStyleBackColor = true;
+            this.btn_Visualizza.Click += new System.EventHandler(this.btn_Visualizza_Click);
             // 
             // cmb_Filtro
             // 
