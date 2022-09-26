@@ -36,7 +36,7 @@
             this.txt_Cognome = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_Visualizza = new System.Windows.Forms.Button();
-            this.cmb_Filtro = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -80,9 +80,9 @@
             // 
             // txt_Cognome
             // 
-            this.txt_Cognome.Location = new System.Drawing.Point(240, 116);
+            this.txt_Cognome.Location = new System.Drawing.Point(157, 116);
             this.txt_Cognome.Name = "txt_Cognome";
-            this.txt_Cognome.Size = new System.Drawing.Size(431, 27);
+            this.txt_Cognome.Size = new System.Drawing.Size(514, 27);
             this.txt_Cognome.TabIndex = 5;
             // 
             // comboBox1
@@ -107,24 +107,21 @@
             this.btn_Visualizza.UseVisualStyleBackColor = true;
             this.btn_Visualizza.Click += new System.EventHandler(this.btn_Visualizza_Click);
             // 
-            // cmb_Filtro
+            // label2
             // 
-            this.cmb_Filtro.FormattingEnabled = true;
-            this.cmb_Filtro.Items.AddRange(new object[] {
-            "Nome",
-            "Cognome",
-            "Città"});
-            this.cmb_Filtro.Location = new System.Drawing.Point(78, 116);
-            this.cmb_Filtro.Name = "cmb_Filtro";
-            this.cmb_Filtro.Size = new System.Drawing.Size(151, 28);
-            this.cmb_Filtro.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(78, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Cognomi:";
             // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 366);
-            this.Controls.Add(this.cmb_Filtro);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Visualizza);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txt_Cognome);
@@ -149,6 +146,6 @@
         private TextBox txt_Cognome;
         private ComboBox comboBox1;
         private Button btn_Visualizza;
-        private ComboBox cmb_Filtro;
+        private Label label2;
     }
 }

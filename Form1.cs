@@ -17,24 +17,15 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
             
             StreamReader reader = new StreamReader(openFileDialog.FileName);    //apre il file selezionato
             txt_File.Text = openFileDialog.FileName;
-
+            int i = 0;
                 while (!reader.EndOfStream)                 //fino a quando non smette di leggere il file
                 {
-                    var riga = reader.ReadToEnd();              //legge l'intero file
-                    var contenuto = riga.Split(';','\n');       //separa in più parti le stringhe divise da ";" e "(a capo)"
+                    var riga = reader.ReadLine();              //legge il file
+                    var contenuto = riga.Split(',','\n');       //separa in più parti le stringhe divise da ";" e "(a capo)"
                     
-                for(int i = 0; i < 21; i = i+3)
-                {
-                    nomi.Add(contenuto[i]);
-                }
-                for(int i = 1; i < 21; i = i+3)
-                {
-                    cognomi.Add(contenuto[i]);
-                }
-                for(int i = 2; i < 21; i = i+3)
-                {
-                    citta.Add(contenuto[i]);
-                }
+                    nomi.Add(contenuto[0]);
+                    cognomi.Add(contenuto[1]);
+                    citta.Add(contenuto[2]);
             }
         }
         
