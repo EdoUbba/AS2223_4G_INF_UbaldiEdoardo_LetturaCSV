@@ -31,11 +31,48 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
         
         private void btn_Visualizza_Click(object sender, EventArgs e)
         {
-            lst_NomiCognomiCitta.Items.Clear();     //Cancella le informazioni presenti nella listbox
-            for(int i = 0; i < nomi.Count; i++)     //for che stampa per ogni riga della list "nomi"
+            lst_NomiCognomiCitta.Items.Clear();         //Cancella le informazioni presenti nella listbox
+            switch (cmb_Filtro.Text)
             {
-                lst_NomiCognomiCitta.Items.Add(nomi.ElementAt(i) + ", " + cognomi.ElementAt(i) + ", " + citta.ElementAt(i));
+
+                case "Vedi tutti":     
+                        for (int i = 0; i < nomi.Count; i++)     //for che stampa per ogni riga della list "nomi"
+                        {
+                            lst_NomiCognomiCitta.Items.Add(nomi.ElementAt(i) + ", " + cognomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                        }
+                    break;
+                case "Contiene":                                                       //caso in cui un cognome contiene x lettera
+                    for (int i = 0;i < cognomi.Count; i++)   
+                        {
+                        if (Convert.ToString(cognomi[i]).ToUpper().Contains(txt_Cognome.Text.ToUpper()))
+                        {
+                            lst_NomiCognomiCitta.Items.Add(cognomi.ElementAt(i) + ", " + nomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                        }
+                        }
+                    break;
+                case "Inizia con":                                                     //caso in cui un cognome inizia con x lettera
+                    for (int i = 0; i < cognomi.Count; i++)
+                    {
+                        if (Convert.ToString(cognomi[i]).ToUpper().StartsWith(txt_Cognome.Text.ToUpper()))
+                        {
+                            lst_NomiCognomiCitta.Items.Add(cognomi.ElementAt(i) + ", " + nomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                        }
+                    }
+                    break;
+                case "Finisce con":                                                    //caso in cui un cognome finisce con x lettera
+                    for (int i = 0; i < cognomi.Count; i++)
+                    {
+                        if (Convert.ToString(cognomi[i]).ToUpper().EndsWith(txt_Cognome.Text.ToUpper()))
+                        {
+                            lst_NomiCognomiCitta.Items.Add(cognomi.ElementAt(i) + ", " + nomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                        }
+                    }
+                    break;
+                default:                                                                //caso in cui non si scelga il filtro
+                    MessageBox.Show("Inserire un filtro");
+                    break;
             }
+
         }
     }
 }

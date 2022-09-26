@@ -34,7 +34,7 @@
             this.btn_Cerca = new System.Windows.Forms.Button();
             this.lst_NomiCognomiCitta = new System.Windows.Forms.ListBox();
             this.txt_Cognome = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Filtro = new System.Windows.Forms.ComboBox();
             this.btn_Visualizza = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -85,17 +85,18 @@
             this.txt_Cognome.Size = new System.Drawing.Size(514, 27);
             this.txt_Cognome.TabIndex = 5;
             // 
-            // comboBox1
+            // cmb_Filtro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_Filtro.FormattingEnabled = true;
+            this.cmb_Filtro.Items.AddRange(new object[] {
+            "Vedi tutti",
             "Contiene",
             "Inizia con",
             "Finisce con"});
-            this.comboBox1.Location = new System.Drawing.Point(677, 115);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 6;
+            this.cmb_Filtro.Location = new System.Drawing.Point(677, 115);
+            this.cmb_Filtro.Name = "cmb_Filtro";
+            this.cmb_Filtro.Size = new System.Drawing.Size(151, 28);
+            this.cmb_Filtro.TabIndex = 6;
             // 
             // btn_Visualizza
             // 
@@ -123,7 +124,7 @@
             this.ClientSize = new System.Drawing.Size(857, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Visualizza);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_Filtro);
             this.Controls.Add(this.txt_Cognome);
             this.Controls.Add(this.lst_NomiCognomiCitta);
             this.Controls.Add(this.btn_Cerca);
@@ -144,7 +145,7 @@
         private Button btn_Cerca;
         private ListBox lst_NomiCognomiCitta;
         private TextBox txt_Cognome;
-        private ComboBox comboBox1;
+        private ComboBox cmb_Filtro;
         private Button btn_Visualizza;
         private Label label2;
     }
