@@ -20,11 +20,11 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
             int i = 0;
                 while (!reader.EndOfStream)                 //fino a quando non smette di leggere il file
                 {
-                    var riga = reader.ReadLine();              //legge il file
+                    var riga = reader.ReadLine();               //legge il file
                     var contenuto = riga.Split(',','\n');       //separa in più parti le stringhe divise da ";" e "(a capo)"
                     
                     nomi.Add(contenuto[0]);
-                    cognomi.Add(contenuto[1]);
+                    cognomi.Add(contenuto[1]);                  //indice sempre = perchè vengono sovrascritti
                     citta.Add(contenuto[2]);
             }
         }
@@ -38,33 +38,33 @@ namespace AS2223_4G_INF_UbaldiEdoardo_LetturaCSV
                 case "Vedi tutti":     
                         for (int i = 0; i < nomi.Count; i++)     //for che stampa per ogni riga della list "nomi"
                         {
-                            lst_NomiCognomiCitta.Items.Add(nomi.ElementAt(i) + ", " + cognomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                            lst_NomiCognomiCitta.Items.Add($"{nomi.ElementAt(i)}, {cognomi.ElementAt(i)}, {citta.ElementAt(i)}");
                         }
                     break;
                 case "Contiene":                                                       //caso in cui un cognome contiene x lettera
                     for (int i = 0;i < cognomi.Count; i++)   
                         {
-                        if (Convert.ToString(cognomi[i]).ToUpper().Contains(txt_Cognome.Text.ToUpper()))
+                        if (cognomi[i].ToUpper().Contains(txt_Cognome.Text.ToUpper()))
                         {
-                            lst_NomiCognomiCitta.Items.Add(cognomi.ElementAt(i) + ", " + nomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                            lst_NomiCognomiCitta.Items.Add($"{cognomi.ElementAt(i)}, {nomi.ElementAt(i)}, {citta.ElementAt(i)}");
                         }
                         }
                     break;
                 case "Inizia con":                                                     //caso in cui un cognome inizia con x lettera
                     for (int i = 0; i < cognomi.Count; i++)
                     {
-                        if (Convert.ToString(cognomi[i]).ToUpper().StartsWith(txt_Cognome.Text.ToUpper()))
+                        if (cognomi[i].ToUpper().StartsWith(txt_Cognome.Text.ToUpper()))
                         {
-                            lst_NomiCognomiCitta.Items.Add(cognomi.ElementAt(i) + ", " + nomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                            lst_NomiCognomiCitta.Items.Add($"{cognomi.ElementAt(i)}, {nomi.ElementAt(i)}, {citta.ElementAt(i)}");
                         }
                     }
                     break;
                 case "Finisce con":                                                    //caso in cui un cognome finisce con x lettera
                     for (int i = 0; i < cognomi.Count; i++)
                     {
-                        if (Convert.ToString(cognomi[i]).ToUpper().EndsWith(txt_Cognome.Text.ToUpper()))
+                        if (cognomi[i].ToUpper().EndsWith(txt_Cognome.Text.ToUpper()))
                         {
-                            lst_NomiCognomiCitta.Items.Add(cognomi.ElementAt(i) + ", " + nomi.ElementAt(i) + ", " + citta.ElementAt(i));
+                            lst_NomiCognomiCitta.Items.Add($"{cognomi.ElementAt(i)}, {nomi.ElementAt(i)}, {citta.ElementAt(i)}");
                         }
                     }
                     break;
